@@ -1,0 +1,22 @@
+datasource db {
+	provider = "postgresql"
+	url      = env("DATABASE_URL")
+}
+
+generator client {
+	provider = "prisma-client-js"
+	previewFeatures = []
+}
+
+model Phantom {
+	id Int @id @default(autoincrement())
+	@@ignore
+}
+
+model ThingA {
+	id Int @id @default(dbgenerated("nextval('\"Phantom_id_seq\"')"))
+}
+
+model ThingB {
+	id Int @id @default(dbgenerated("nextval('\"Phantom_id_seq\"')"))
+}

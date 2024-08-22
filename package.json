@@ -1,0 +1,23 @@
+{
+	"name": "",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"docker": "docker compose up -d",
+		"setup": "prisma generate && prisma migrate deploy && prisma db seed",
+		"build:prisma": "npx prisma generate"
+	},
+	"dependencies": {
+		"@prisma/client": "^5.18.0"
+	},
+	"devDependencies": {
+		"prisma": "^5.18.0"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"prisma": {
+		"seed": "node ./prisma/seed.js"
+	}
+}
