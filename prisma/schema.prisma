@@ -14,9 +14,9 @@ model Phantom {
 }
 
 model ThingA {
-	id Int @id @default(dbgenerated("nextval('\"Phantom_id_seq\"')"))
+	id Int @id @default(dbgenerated("get_next_phantom_id()"))
 }
 
 model ThingB {
-	id Int @id @default(dbgenerated("nextval('\"Phantom_id_seq\"')"))
+	id Int @id @default(dbgenerated("get_next_phantom_id()"))
 }
